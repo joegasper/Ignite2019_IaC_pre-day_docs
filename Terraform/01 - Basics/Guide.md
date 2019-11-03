@@ -72,7 +72,7 @@ address_space should be set to "10.0.0.0/16"
 Using [Terraform Azure provider documentation for virtual network](https://www.terraform.io/docs/providers/azurerm/r/virtual_network.html), define a new subnet within the VNet with the following properties:
 
 ```
-name should be "subnet1"
+name should be "default"
 address_prefix should be "10.0.1.0/24"
 ```
 
@@ -90,7 +90,7 @@ resource "azurerm_virtual_network" "predayvnet" {
   address_space       = ["10.0.0.0/16"]
 
   subnet {
-    name           = "subnet1"
+    name           = "default"
     address_prefix = "10.0.1.0/24"
   }
 ```
@@ -129,7 +129,7 @@ Terraform will perform the following actions:
       + subnet {
           + address_prefix = "10.0.1.0/24"
           + id             = (known after apply)
-          + name           = "subnet1"
+          + name           = "default"
         }
     }
 
